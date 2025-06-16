@@ -105,7 +105,7 @@ def login():
         return jsonify({'msg': 'Email or password is incorrect'}), 400
 
     access_token = create_access_token(identity=body['email'])
-    return jsonify({'token': access_token})
+    return jsonify({'token': access_token, 'username': user.username})
 
 
 @app.route('/register', methods=['POST'])
@@ -121,6 +121,7 @@ def register():
 
     new_user = User()
     new_user.email = body['email']
+    new_user.username = body['username']
     new_user.password = bcrypt.generate_password_hash(
         body['password']).decode("utf-8")
     new_user.is_active = True

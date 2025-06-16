@@ -1,0 +1,38 @@
+body.dark-theme {
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+.lightBody {
+  background-color: #fdfdfc;
+}
+body.light-theme {
+  background-color: #fdfdfc;
+  height: 100vh;
+  color: black;
+}
+
+.texto {
+  color: #e91f63;
+}
+
+.navborder-light {
+  border-left: 1px solid rgb(237, 234, 234);
+}
+.navborder-dark {
+  border-left: 1px solid rgb(0, 0, 0);
+}
+
+body.dark-theme input::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+body.light-theme input::placeholder {
+  color: #6c757d; /* o el color que prefieras en modo claro */
+  opacity: 1;
+}
+
+.light {
+  background-color: rgb(243, 242, 242);
+}

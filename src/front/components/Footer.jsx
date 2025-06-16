@@ -1,11 +1,23 @@
-export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Check the <a target="_blank" href="https://4geeks.com/docs/start/react-flask-template">template documentation</a> <i className="fa-solid fa-file"></i> for help.
-		</p>
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
-);
+import { ThemeContext } from "../hooks/ThemeContext";
+import { useContext } from "react";
+export const Footer = () => {
+
+	const { darkMode, toggleTheme } = useContext(ThemeContext);
+
+	return (
+
+
+
+		<footer className={` position-fixed bottom-0 w-100  d-flex justify-content-center  py-3 ${darkMode ? "bg-dark" : "light"}`}>
+			<p className="mb-0">
+
+				website created by{' '}
+				<a href="https://github.com/NicolasQuest" className={` ${darkMode ? "text-white" : "text-dark"} text-decoration-none`}>@NicolasQuest</a>.
+				<p className={` ${darkMode ? "text-white" : "text-dark"}`} style={{ fontSize: "0.8rem", textAlign: "center", padding: "0.5rem 0" }}>
+					&copy; {new Date().getFullYear()} Todos los derechos reservados.
+				</p>
+
+			</p>
+		</footer>
+	);
+}
