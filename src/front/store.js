@@ -16,6 +16,7 @@ export default function storeReducer(store, action = {}) {
         isAuthenticated: true,
         token: action.payload.token,
         user: action.payload.user,
+        email: action.payload.email,
       };
 
     case "logout":
@@ -24,6 +25,7 @@ export default function storeReducer(store, action = {}) {
         isAuthenticated: null,
         token: null,
         user: null,
+        email: null,
       };
     default:
       return store;

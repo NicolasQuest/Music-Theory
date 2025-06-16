@@ -105,7 +105,7 @@ def login():
         return jsonify({'msg': 'Email or password is incorrect'}), 400
 
     access_token = create_access_token(identity=body['email'])
-    return jsonify({'token': access_token, 'username': user.username})
+    return jsonify({'token': access_token, 'username': user.username, 'email': user.email})
 
 
 @app.route('/register', methods=['POST'])
